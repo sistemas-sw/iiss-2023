@@ -14,6 +14,15 @@ Los ejemplos serán similares a los estudiados en teoría, u otros alternativos 
    - [Ruby](https://www.ruby-lang.org/)
    - Cualquier otro lenguaje que tenga un mecanismo útil de implementación para el tema en cuestión y el ejemplo propuesto
 2. Proponer un ejemplo a implementar, bien similares a los estudiados en teoría, bien propuestos por el estudiante. 
+   - Colocad el ejemplo que implementéis en una carpeta con el nombre del lenguaje que hayáis elegido. Por ejemplo:
+      - `csharp`
+      - `lua`
+      - `kotlin`
+      - `python`
+      - `typescript`
+      - `ruby`
+      - `scala`
+      - `swift`
 3. Implementar cada ejemplo empleando los mecanismos del lenguaje elegido.
    - Incluir una breve explicación escrita en [markdown](https://en.wikipedia.org/wiki/Markdown), que incluya instrucciones sobre cómo construir, compilar y ejecutar el ejemplo.
    - Incluir en el código un programa principal breve de demostración del ejercicio.
@@ -48,7 +57,7 @@ Los ejemplos serán similares a los estudiados en teoría, u otros alternativos 
 
 #### 1. Encapsulación
 
-Implementar el ejemplo final de [Recorrido de listas](http://dodero.github.io/iiss/iiss-oop-1/#implementacion-alternativa-lista-v04) usando los mecanismos del lenguaje para definición de tipos de datos, ocultación de la implementación, aplicación del principio de acceso uniforme y especificación de la inmutabilidad del estado de un objeto. Por ejemplo:
+Implementar el ejemplo final de [Recorrido de listas](http://dodero.github.io/iiss/iiss-oop-1/#implementacion-alternativa-lista-v04) (o un ejemplo equivalente) usando los mecanismos del lenguaje para definición de tipos de datos, ocultación de la implementación, aplicación del principio de acceso uniforme y especificación de la inmutabilidad del estado de un objeto. Por ejemplo:
 
 - En Ruby, se podrían usar `:symbols`, `module`, `@variables` de instancia, `attr_accessor`, `attr_reader`, `attr_writer`, etc.
 - En Scala, se podrían usar modificadores de visibilidad (`private`, `protected`), `var`, `val`, `type`, `abstract`, `sealed`, etc.
@@ -56,32 +65,31 @@ Implementar el ejemplo final de [Recorrido de listas](http://dodero.github.io/ii
 
 #### 2. Herencia
 
-Implementar el ejemplo de [Aventura](http://dodero.github.io/iiss/iiss-oop-1/#ejemplo-aventura-v01) usando los mecanismos de herencia y polimorfismo de inclusión que proporcione el lenguaje. Por ejemplo:
+Implementar el ejemplo de [Aventura](http://dodero.github.io/iiss/iiss-oop-1/#ejemplo-aventura-v01) (o un ejemplo equivalente) usando los mecanismos de herencia y polimorfismo de inclusión que proporcione el lenguaje. Por ejemplo:
 
 - En Scala, podría usarse el mecanismo básico de herencia (`extends`), mixins (`traits`), `with`, etc.
 - En C#, se podrían usar el mecanismo básico de herencia, `interface`, `base`, `override`, `virtual`, `new`, etc.
 
-#### 3. Delegación 
+#### 3. Delegación
 
-Implementar el ejemplo final de [Orquesta](http://dodero.github.io/iiss/iiss-oop-2/#implementacion-alternativa-orquesta-v06) usando los mecanismos del lenguaje para la delegación/composición. Intentará evitarse el uso de _lambdas_, que están destinadas a otro bloque. Por ejemplo:
+Implementar el ejemplo final de [Orquesta](http://dodero.github.io/iiss/iiss-oop-2/#implementacion-alternativa-orquesta-v06) (o un ejemplo equivalente) usando los mecanismos del lenguaje para la delegación/composición. Intentará evitarse el uso de _lambdas_, que están destinadas a otro bloque. Por ejemplo:
 
 - En C# podrían usarse `delegates`.
 - En Scala, podrían usarse _first-class functions_.
 - En Ruby, podrían usarse bloques, `proc`, `module` y `delegate`.
 
-
 ### Bloque II. Dependencias y Calidad de Código
 
 #### 4. Inyección
 
- Implementar el ejemplo de la identificación de [BankAccount](http://dodero.github.io/iiss/iiss-oop-3/#ejercicio-identificador-de-bankaccount-con-inyeccion-de-dependencias) y que se puedan definir diversos atributos para comparar cuentas, usando los mecanismos del lenguage para inyectar como dependencia el criterio de comparación. Por ejemplo:
- 
+ Implementar el ejemplo de la identificación de [BankAccount](http://dodero.github.io/iiss/iiss-oop-3/#ejercicio-identificador-de-bankaccount-con-inyeccion-de-dependencias) (o un ejemplo equivalente) y que se puedan definir diversos atributos para comparar cuentas, usando los mecanismos del lenguage para inyectar como dependencia el criterio de comparación. Por ejemplo:
+
 - En Java, puede usarse el framework [Guice](https://github.com/google/guice/wiki/) o [Weld CDI](http://weld.cdi-spec.org/)
 - En Scala, puede usarse el framework [Play](https://www.playframework.com/) que implementa la inyección de dependencias [en tiempo de compilación](https://www.playframework.com/documentation/2.8.x/ScalaCompileTimeDependencyInjection).
 
 #### 5. Anotaciones
 
-Implementar el ejemplo de [BankAccount](http://dodero.github.io/iiss/iiss-oop-3/#ejercicio-identificador-de-bankaccount-con-inyeccion-de-dependencias) con diversos atributos comparables, usando los  mecanismos de anotaciones que el lenguaje proporcione para inyectar como dependencia el comparador a usar. Por ejemplo:
+Implementar el ejemplo de [BankAccount](http://dodero.github.io/iiss/iiss-oop-3/#ejercicio-identificador-de-bankaccount-con-inyeccion-de-dependencias) (o un ejemplo equivalente) con diversos atributos comparables, usando los  mecanismos de anotaciones que el lenguaje proporcione para inyectar como dependencia el comparador a usar. Por ejemplo:
 
 - En Java, podrían definirse anotaciones a medida para inyección de dependencias en _runtime_, según el [JSR 330](http://javax-inject.github.io/javax-inject/). Ejemplo: [Creating a Custom Annotation in Java](http://baeldung.com/java-custom-annotation) de Baeldung
 - En TypeScript, podrían usarse [_decorators_](https://www.typescriptlang.org/docs/handbook/decorators.html).
@@ -89,14 +97,14 @@ Implementar el ejemplo de [BankAccount](http://dodero.github.io/iiss/iiss-oop-3/
 
 #### 6. Aspectos
 
-Implementar usando aspectos el ejemplo del caso [Editor de Figuras](http://dodero.github.io/iiss/iiss-aop/#caso-5-editor-de-figuras). Por ejemplo:
+Implementar usando aspectos el ejemplo del caso [Editor de Figuras](http://dodero.github.io/iiss/iiss-aop/#caso-5-editor-de-figuras) (o un ejemplo equivalente). Por ejemplo:
 
 - En Java, usar intercepción de métodos con [Guice](https://github.com/google/guice/wiki/AOP)
 - En Python, usar [Spring Python](https://docs.spring.io/spring-python/1.2.x/sphinx/html/aop.html#aspect-oriented-programming)
 
 #### 7. Undefined
 
-Implementar el ejemplo del caso "MobileTester" del apartado [Optionals](http://dodero.github.io/iiss/iiss-err/#optionals) usando los mecanismos del lenguaje para resolver el problema de los valores _undefined_ y el mal uso de `null`. Por ejemplo:
+Implementar el ejemplo del caso "MobileTester" del apartado [Optionals](http://dodero.github.io/iiss/iiss-err/#optionals) (o un ejemplo equivalente) usando los mecanismos del lenguaje para resolver el problema de los valores _undefined_ y el mal uso de `null`. Por ejemplo:
 
 - En C++, podría usarse [`std::optional`]((https://en.cppreference.com/w/cpp/utility/optional))
 - En Scala, podrían usarse los mecanismos de la biblioteca del lenguaje como `Option`, `Some`, `None`, `Either`, `Left`, `Right`, etc.
@@ -121,7 +129,6 @@ Implementar un ejemplo de programación asíncrona, similar a los mostrados en [
 #### 10. Observables
 
 Implementar un ejemplo de procesamiento de streams de eventos asíncronos empleando una biblioteca [ReactiveX](http://reactivex.io/intro.html) para el lenguaje elegido. Por ejemplo:
- 
+
 - En C++, usar los elementos _observable_ de la biblioteca [RxCpp](http://reactivex.io/RxCpp/index.html).
 - En Scala, usar el framework [Akka](https://akka.io/) o el trait [`Observable`](https://reactivex.io/rxscala/scaladoc/index.html#rx.lang.scala.Observable) de las extensiones [RxScala](https://reactivex.io/rxscala/).
-
