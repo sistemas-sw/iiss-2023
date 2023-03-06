@@ -79,11 +79,3 @@ end
 
 setmetatable(Account, Account_mt)
 ```
-
-Ahora podemos crear una nueva cuenta vancaria con la función *new* de la tabla *Account*:
-
-```Lua
-	local acceder = Account:new(1000)
-```
-
-Con esta úlitma línea podemos acceder a los métodos declarados en la tabla *Account*.
