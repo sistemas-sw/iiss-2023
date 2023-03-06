@@ -7,18 +7,15 @@ La idea es implementar prototipos. Mas específicamente, si tenemos dos objetos 
 ```Lua
 	setmetatable(a, {__index = b})
 ```
-Después de la anterior línea de código, **a** buscará en **b** cualquier operación que no tenga. Para ver **b** como la clase de objeto de **a** no es más que un cambio en la terminología. Vayamos a un ejemplo un poco mas elavorado, veamos un ejemplo de un banco. Supongamos que queremos crear una clase banco en Lua, para ello reduzcamos el ejemplo en tan solo dos variables, una para el nombre del titular (*String*) y otra para la cantidad de dinero que hay en el banco. Además, queremos encapsular dos funciones, una para ingresar y otra para retirar dinero. Por lo que en Lua quedaría:
+Después de la anterior línea de código, **a** buscará en **b** cualquier operación que no tenga. Para ver **b** como la clase de objeto de **a** no es más que un cambio en la terminología. Vayamos a un ejemplo un poco mas elavorado, veamos un ejemplo de un banco. Supongamos que queremos crear una clase banco en Lua, para ello reduzcamos el ejemplo en tan solo una variable para la cantidad de dinero que hay en el banco. Además, queremos encapsular dos funciones, una para ingresar y otra para retirar dinero. Por lo que en Lua quedaría:
 ```Lua
 	local Account = {}
 	
-	function Account:new(cantidad, titular)
-		local obj = {
-			cantidad = cantidad
-			titular = titular
-		}
-		setmetatable(obj, self)
+	function Account:new(o)
+		o = o or {}
+		setmetatable(o, self)
 		self.__index = self
-		return obj
+		return o
 	end
 
 	function Account:deposit(c)
@@ -45,10 +42,7 @@ Cada metatabla tiene dos claves *__index* y *__newindex*, *__index*, define una 
 local Account_mt = {
 	__index = function(t, k)
 		if k == "cantidad" then
-			return t._cantidad
-		elseif k == "titular" then
-			return t._titular
-			end
+			return t._o
 		elseif k == "deposit" then
 			return function(self, c)
 				self:_deposit(c)
