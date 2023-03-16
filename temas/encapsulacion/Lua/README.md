@@ -73,3 +73,5 @@ end
 
 setmetatable(Account, Account_mt)
 ```
+
+Lamentablemente, en Lua no existe la forma de declarar un método ni un objeto de forma privada, es decir, el concepto de atributos públicos o privados no existe, ya que Lua apunta a un camino de programas pequeños/medianos. Por otra parte, en Lua podemos usar las tablas como forma de aproximarnos a la privacidad de los atributos, de forma que podríamos dividir en tablas los atributos que queremos que solo sean modificables en una única tabla y otra tabla con todos los atributos que que queremos que sean solo observables.
