@@ -75,3 +75,10 @@ setmetatable(Account, Account_mt)
 ```
 
 Lamentablemente, en Lua no existe la forma de declarar un método ni un objeto de forma privada, es decir, el concepto de atributos públicos o privados no existe, ya que Lua apunta a un camino de programas pequeños/medianos. Por otra parte, en Lua podemos usar las tablas como forma de aproximarnos a la privacidad de los atributos, de forma que podríamos dividir en tablas los atributos que queremos que solo sean modificables en una única tabla y otra tabla con todos los atributos que que queremos que sean solo observables.
+
+## Compilar código Lua
+Para compilar código Lua, debemos instalar el compilador de éste, por ello en ubuntu debemos escribir el siguiente comando en la terminal:
+```
+	sudo apt install lua5.3
+```
+En caso de que tengas un SO en el que no puedas ejecutar este comando le recomiendo que visite el siguiente enlace: https://www.solvetic.com/tutoriales/article/5802-como-instalar-lua-en-linux-o-windows-10/
