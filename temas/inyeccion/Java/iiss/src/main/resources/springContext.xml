@@ -1,0 +1,60 @@
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="Date1"
+        class="java.time.LocalDate"
+        factory-method="now">
+    </bean> 
+    <bean id="Date2"
+        class="java.time.LocalDate"
+        factory-method="of">
+        <constructor-arg name="year" value="2001" />
+        <constructor-arg name="month" value="10" />
+        <constructor-arg name="dayOfMonth" value="17" />
+    </bean> 
+
+	<bean id="comparatorDate" class="com.iiss.BankAccountComparatorByCreationDate"/>
+
+    <bean id="comparatorID" class="com.iiss.BankAccountComparatorById">
+    </bean>
+
+    <bean id="InjectwithConstructor" class="com.iiss.BankAccount">
+        <constructor-arg name="number" value="1111">
+        </constructor-arg>
+
+        <constructor-arg name="cmp" ref="comparatorID">
+        </constructor-arg>
+
+        <constructor-arg name="date" ref="Date1">
+        </constructor-arg>
+        
+    </bean>
+
+    <bean id="InjectwithConstructor2" class="com.iiss.BankAccount">
+        <constructor-arg name="number" value="2222">
+        </constructor-arg>
+
+        <constructor-arg name="cmp" ref="comparatorDate">
+        </constructor-arg>
+
+        <constructor-arg name="date" ref="Date2">
+        </constructor-arg>
+        
+    </bean>
+
+    <bean id="InjectwithSetter" class="com.iiss.BankAccount">
+        <constructor-arg name="number" value="3333">
+        </constructor-arg>
+
+        <property name="comparator" ref="comparatorDate">
+        </property>
+
+        <property name="creationDate" ref="Date1">
+        </property>
+
+    </bean>
+		
+</beans>
